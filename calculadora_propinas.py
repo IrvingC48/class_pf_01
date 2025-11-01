@@ -9,3 +9,7 @@ def solicitar_propina():
         porcentaje_propina = solicitar_propina()
     return porcentaje_propina
 
+porcentaje_propina = solicitar_propina()
+
+propina = (total_cuenta * porcentaje_propina) / 100
+total_a_pagar = total_cuenta + propina
