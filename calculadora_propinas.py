@@ -2,20 +2,28 @@
 #El total de la cuenta debe ser un número positivo.
 #El porcentaje de propina debe estar entre 0 y 100.
 
-total_cuenta = int(input("Ingrese el total de la cuenta en pesos:"))
+total_cuenta = input("Ingrese el total de la cuenta en pesos:")
+if not(total_cuenta.isdigit()):
+    print("Error: Debe ingresar un número válido para el total de la cuenta.")
+    exit()
+total_cuenta = int(total_cuenta)
 if not(total_cuenta > 0):
     print("Error: Debe ingresar un número positivo para el total de la cuenta.")
     exit()
 
 def solicitar_propina():
-    porcentaje_propina = int(input("Ingrese el porcentaje de propina que desea dejar (por ejemplo, 15 para 15%):"))
-    if (porcentaje_propina<0) or (porcentaje_propina>100):
+    porcentaje_propina = input("Ingrese el porcentaje de propina que desea dejar (por ejemplo, 15 para 15%):")
+    if not(porcentaje_propina.isdigit()):
+        print("Error: Debe ingresar un número válido para la propina.")
+        porcentaje_propina = solicitar_propina()
+    if (int(porcentaje_propina) < 0) or (int(porcentaje_propina) > 100):
+        print("Error: El porcentaje de propina debe estar entre 0 y 100.")
         porcentaje_propina = solicitar_propina()
     return porcentaje_propina
 
 
 #Se calcula el porcentaje de propina y el total a pagar
-porcentaje_propina = solicitar_propina()
+porcentaje_propina = int(solicitar_propina())
 
 propina = (total_cuenta * porcentaje_propina) / 100
 total_a_pagar = total_cuenta + propina
