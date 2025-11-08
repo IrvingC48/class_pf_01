@@ -47,3 +47,16 @@ elif dia in ["Sabado", "Domingo"]:
 else:
     print("Día entre semana")
 
+# Caso: Evaluación de desempeño académico
+calificacion = int(input("Ingrese la calificación del estudiante:"))
+asistencia = int(input("Ingrese el porcentaje de asistencia del estudiante (número):")) #porcentaje de asistencia
+participacion = input("Ingrese la participación del estudiante (puede ser 'alta', 'media', 'baja'):") # puede ser 'alta', 'media', 'baja'
+
+if calificacion >= 90 and asistencia >=95 and participacion == 'alta':
+    print("Desempeño sobresaliente")
+elif calificacion >= 80 and asistencia >=85 and participacion in ['alta', 'media']:
+    print("Desempeño bueno")
+elif calificacion >= 70 and asistencia >=75:
+    print("Desempeño aceptable")
+else:
+    print("Desempeño insuficiente")
