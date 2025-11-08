@@ -23,3 +23,27 @@ if usuario_activo:
     print("Bienvenido de nuevo.")
 else:
     print("Por favor, inicia sesión.")
+
+# if - elif - else - Condicional compuesto - múltiple
+# switch - case en otros lenguajes
+# Caso: Clasificar calificaciones
+calificacion = 85
+if calificacion >= 90:
+    print("Excelente")
+elif calificacion >= 70:
+    print("Aprobado")
+else:
+    print("Reprobado")
+
+# Caso: Determinar tipo de día
+dia = "Sabado"
+if dia == "Lunes":
+    print("Inicio de semana")
+elif dia == "Viernes":
+    print("Fin de semana laboral")
+# elif dia == "Sabado" or dia == "Domingo":
+elif dia in ["Sabado", "Domingo"]:
+    print("Fin de semana")
+else:
+    print("Día entre semana")
+
