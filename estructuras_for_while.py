@@ -1,7 +1,7 @@
 # Caso de uso while: Validar número entre 1 y 10
 #validador = False
 while True:#validador == False:
-    n = input("Introduce un número entre 1 y 10: ")
+    n = input("Introduce un número entre 1 y 10, que indique el valor de bajo stock: ")
     if not(n.isdigit()):
         print("Entrada no válida. Intenta de nuevo.")
         continue
@@ -28,7 +28,7 @@ total_inventario = 0
 bajo_stock = []
 
 for producto in productos:
-    if producto["stock"] <=2:
+    if producto["stock"] <=n:
         bajo_stock.append(producto["nombre"])
     total_inventario += producto["precio"] * producto["stock"]
 
