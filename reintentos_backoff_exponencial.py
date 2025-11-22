@@ -2,10 +2,10 @@ import time
 import random
 
 tasks = [
-    {"id" : 1, "name": "Enviar correo", "success_rate": 0.7},
-    {"id" : 2, "name": "Generar reporte", "success_rate": 0.5},
-    {"id" : 3, "name": "Subir archivo", "success_rate": 0.3},
-    {"id" : 4, "name": "Leer archivo", "success_rate": 0.1},
+    {"id" : 1, "name": "Enviar correo", "success_rate": 0.7, "is_active" : True},
+    {"id" : 2, "name": "Generar reporte", "success_rate": 0.5, "is_active" : True},
+    {"id" : 3, "name": "Subir archivo", "success_rate": 0.3, "is_active" : False},
+    {"id" : 4, "name": "Leer archivo", "success_rate": 0.1, "is_active" : True},
 ]
 
 max_retries = 4
@@ -15,6 +15,10 @@ for task in tasks:
     attempt = 0
     backoff = 1.0 # Tiempo inicial de espera en segundos
     success = False
+
+    if not task['is_active']:
+        print(f'Tarea {task["id"]} {task["name"]} esta inactiva, omitiendo...')
+        continue
 
     #Reintentos controlados por while
     while attempt <= max_retries:
