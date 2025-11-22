@@ -8,7 +8,7 @@ tasks = [
     {"id" : 4, "name": "Leer archivo", "success_rate": 0.1},
 ]
 
-max_retries = 5
+max_retries = 4
 summary = {"proccessed": 0, "failed" : 0, "attempts" : []}
 
 for task in tasks:
