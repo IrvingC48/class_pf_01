@@ -5,6 +5,7 @@ tasks = [
     {"id" : 1, "name": "Enviar correo", "success_rate": 0.7},
     {"id" : 2, "name": "Generar reporte", "success_rate": 0.5},
     {"id" : 3, "name": "Subir archivo", "success_rate": 0.3},
+    {"id" : 4, "name": "Leer archivo", "success_rate": 0.1},
 ]
 
 max_retries = 5
