@@ -14,13 +14,13 @@
 
 rutas_exploracion = [
     #Ruta 1
-    [("A1", 50), ("A2", 90), ("A3", 160), ("A4", 20)],
+    [("A1", 50), ("A2", 90), ("A3", 160), ("A4", 20)], #0
     #Ruta 2
-    [("B1", 10), ("B2", 0), ("B3", 40), ("B4", 75)],
+    [("B1", 10), ("B2", 0), ("B3", 40), ("B4", 75)], #1
     #Ruta 3
-    [("C1", 10), ("C2", 20), ("C3", 30), ("C4", 88)],
+    [("C1", 10), ("C2", 20), ("C3", 30), ("C4", 88)], #2
     #Ruta 4
-    [("D1", 150), ("D2", 10), ("D3",20 )],
+    [("D1", 150), ("D2", 10), ("D3",20 )], #3
 ]
 
 valor_objetivo = 100 # El valor mínimo para detener la búsqueda
@@ -28,3 +28,15 @@ valor_objetivo = 100 # El valor mínimo para detener la búsqueda
 print("-- Iniciando el optimizador de búsqueda de tesoros --")
 print(f'El valor mínimo para optimizar la búsqueda es: {valor_objetivo}\n')
 
+for indice_ruta, ruta in enumerate(rutas_exploracion):
+    nombre_ruta = f'Ruta {indice_ruta + 1}'
+    print(f'Explorando: {nombre_ruta} ({len(ruta)} puntos)')
+    print('='*20)
+
+    encontrado_objetivo = False
+
+    for coordenada, valor in ruta:
+        if valor == 0:
+            print(f'[AVISO] Punto {coordenada}: No accesible. Saltando...')
+            continue
+        print(f'    Analizando punto {coordenada} | Valor del tesoro: {valor}')
