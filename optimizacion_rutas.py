@@ -48,3 +48,10 @@ for indice_ruta, ruta in enumerate(rutas_exploracion):
         else:
             print(f' [Info] Valor bajo. Continuar la búsqueda en {nombre_ruta}...')
 
+    if encontrado_objetivo:
+        print(f'\nRESUMEN: {nombre_ruta} optimizada. Éxito temprano.')
+    else:
+        print(f'\nRESUMEN: {nombre_ruta} completada. Objetivo no alcanzado.')
+    print('-'*50)
+
+print('\n-- Proceso de optimización finalizado --')
