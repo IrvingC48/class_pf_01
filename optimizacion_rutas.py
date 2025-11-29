@@ -40,3 +40,11 @@ for indice_ruta, ruta in enumerate(rutas_exploracion):
             print(f'[AVISO] Punto {coordenada}: No accesible. Saltando...')
             continue
         print(f'    Analizando punto {coordenada} | Valor del tesoro: {valor}')
+
+        if valor >= valor_objetivo:
+            print(f'   ***!ÉXITO! Tesoro de {valor} encontrado en {coordenada} ***')
+            encontrado_objetivo = True
+            break # Detener la búsqueda interior.
+        else:
+            print(f' [Info] Valor bajo. Continuar la búsqueda en {nombre_ruta}...')
+
