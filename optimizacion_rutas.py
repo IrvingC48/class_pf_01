@@ -31,7 +31,7 @@ print(f'El valor mínimo para optimizar la búsqueda es: {valor_objetivo}\n')
 for indice_ruta, ruta in enumerate(rutas_exploracion):
     nombre_ruta = f'Ruta {indice_ruta + 1}'
     print(f'Explorando: {nombre_ruta} ({len(ruta)} puntos)')
-    print('='*20)
+    print('='*50)
 
     encontrado_objetivo = False
 
