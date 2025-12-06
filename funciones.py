@@ -34,3 +34,16 @@ generar_titulo("ANÁLISIS FINAL", "*")
 generar_titulo("ADVERTENCIA", "!")
 
 
+#Conversor de Moneda flexible
+
+#tasa_cambio tiene un valor default de 18.17
+def convertir_a_pesos(cantidad, tasa_cambio=18.17):
+    total = cantidad * tasa_cambio
+    return round(total,2)
+
+#Caso 1: Usando el valor por defecto (Dólares)
+print(f'100 USD son: {convertir_a_pesos(100)} MXN (Tasa Default)')
+
+#Caso 2: Sobreescribiendo el valor por defecto (Euros)
+pesos_euros = convertir_a_pesos(100, 21.18)
+print(f'100 Euros son: {pesos_euros} MXN (Tasa específica)')
