@@ -36,4 +36,20 @@ def cuenta_regresiva(n):
         print(n)
         cuenta_regresiva(n - 1)
 
-cuenta_regresiva(10)
+cuenta_regresiva(5)
+
+
+#Uso de funciones lambda
+#Aplicar un descuento de 10% de descuento a una lista de precios usando map.
+precios = [100,200,50,30]
+
+#Multiplicar por 0.9 equivale a restar el 10%
+#Convertimos el resultado de map() a list() para poder verlo
+def aplicar_descuento(precio):
+    return precio * 0.9
+
+
+precios_descuento_anonima = list(map(lambda x: x * 0.9, precios))
+precios_descuento_definida = list(map(aplicar_descuento, precios))
+print(f'Precios con descuento (lambda): {precios_descuento_anonima}')
+print(f'Precios con descuento (definida): {precios_descuento_definida}')
