@@ -53,3 +53,15 @@ precios_descuento_anonima = list(map(lambda x: x * 0.9, precios))
 precios_descuento_definida = list(map(aplicar_descuento, precios))
 print(f'Precios con descuento (lambda): {precios_descuento_anonima}')
 print(f'Precios con descuento (definida): {precios_descuento_definida}')
+
+
+#Uso de función zip
+#Unir estudiantes y calificaciones en un diccionario.
+estudiantes = ['Ana', 'Luis', 'Carlos']
+calificaciones = [85, 90, 78]
+
+#zip crea pares ('Ana', 85)...
+#dict convertir esos pares directamente en claves y valores.
+registro_escolar = dict(zip(estudiantes, calificaciones))
+
+print(registro_escolar)
