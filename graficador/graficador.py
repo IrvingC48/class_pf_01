@@ -1,4 +1,4 @@
-import matplotlib as plt
+import matplotlib.pyplot as plt
 
 def crear_grafica_barras(df, column_x, column_y):
     #Crear la fígura y los ejes
@@ -19,3 +19,5 @@ def crear_grafica_barras(df, column_x, column_y):
 
     #Mostrar el gráfico
     plt.show()
+
+    return None
