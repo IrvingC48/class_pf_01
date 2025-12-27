@@ -12,7 +12,7 @@ def main():
         if not df_diabetes.empty:
 
             #3 Pasar el df al módulo de graficación
-            crear_grafica_barras(df_diabetes, 'Age', 'Outcome')
+            crear_grafica_barras(df_diabetes, 'Age', 'BMI')
         else:
             print("Error: El Dataframe está vacío.")
 
