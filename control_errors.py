@@ -17,3 +17,19 @@ def dividir_seguro(a, b):
 # dividir_seguro(10,2)
 # dividir_seguro(10,0)
 # dividir_seguro(10,'b')
+
+#Acceso seguro a listas
+frutas = ["Manzana", "Platano", "Naranja"]
+print(f'Opciones disponibles: 0 a {len(frutas)-1}')
+
+try:
+    indice = int(input("Selecciona el número de la fruta: "))
+    seleccion = frutas[indice]
+except ValueError:
+    print("Error: Debes ingresar un número entero.")
+except IndexError:
+    print("Error: El número está fuera del rango disponible.")
+else:
+    print(f'Has seleccionado: {seleccion}.')
+finally:
+    print("Fin del proceso de selección.")
