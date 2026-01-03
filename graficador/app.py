@@ -1,5 +1,5 @@
 from generador_datos import obtener_df
-from graficador import crear_grafica_barras
+from graficador_plt import crear_grafica_barras
 
 def main():
     print("---Iniciando App---")
