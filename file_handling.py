@@ -37,3 +37,33 @@ def guardar_tareas():
     print("Tareas guardadas exitosamente en tareas.txt")
 
 # guardar_tareas()
+
+
+import os
+
+def crear_respaldo(origen, destino):
+    #1 validar si el archivo existe
+    if not os.path.exists(origen):
+        print(f"Error: El archivo original '{origen}' no existe.")
+        return None
+
+    #2 validar si existe el destino para no sobreescribir sin permiso
+    if os.path.exists(destino):
+        respuesta = input(f"El archivo '{destino}' ya existe. ¿Sobreescribir? (s/n):")
+        if respuesta.lower() != 's':
+            print("Operación cancelada.")
+            return None
+
+    #3 proceso de copia
+    try:
+        with open(origen, 'r', encoding='utf-8') as f_origen:
+            contenido = f_origen.read()
+
+        with open(destino, 'w', encoding='utf-8') as f_destino:
+            f_destino.writelines(contenido)
+
+        print(f'Copia de seguridad creada en {destino}')
+    except Exception as e:
+        print(f'Ocurrió un error inesperado: {e}')
+
+crear_respaldo('E:/data_F/tareas.txt', 'E:/data/respaldo_tareas.txt')
