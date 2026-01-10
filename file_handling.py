@@ -22,3 +22,18 @@ with open('E:/data_F/flavors_of_cacao.csv', 'r') as file_cacao:
         continue
         # print(linea.strip())
 
+def guardar_tareas():
+    tareas = []
+    print("Ingresa 3 tareas para hoy:")
+
+    for i in range(3):
+        tarea = input(f'Tarea {i+1}: ')
+        tareas.append(tarea + "\n")
+
+    #Usamos 'w' para crear o sobreescribir
+    with open('E:/data_F/tareas.txt', 'w', encoding='utf-8') as archivo:
+        archivo.writelines(tareas)
+
+    print("Tareas guardadas exitosamente en tareas.txt")
+
+# guardar_tareas()
